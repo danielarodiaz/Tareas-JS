@@ -46,7 +46,7 @@ const filtrarPeliculas = (
     if (resultado.length > 0) {
       console.log("=======PELICULAS ENCONTRADAS========");
       for (i = 0; i < resultado.length; i++) {
-        console.log(`${[i + 1]}. ${peliculas[i]}`);
+        console.log(`${[i + 1]}. ${resultado[i]}`);
       }
     } else {
       alert("No se encontraron coincidencias");
@@ -125,7 +125,12 @@ const menu = () => {
           modificarTitulo();
           break;
         default:
-          alert("Muchas gracias. Hasta pronto!");
+          if(!opcion2){
+            alert("Muchas gracias. Hasta pronto!");
+          }else{
+            alert("La opcion elegida no es válida");
+            menu();
+          }
           break;
       }
     }
